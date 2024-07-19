@@ -65,11 +65,9 @@ module.exports = {
         };
          data.overrideMessagePayload = overrideMessagePayload;
         console.log("Stringified data ===> ", JSON.stringify(data));
-        const timeOutFn = (data) =>{
-          return sdk.sendUserMessage(data,callback)  
-        }
-        const myTimeout =  setTimeout(timeOutFn(data), 25000);
-          clearTimeout(myTimeout);
+        return setTimeout(()=>{
+             sdk.sendUserMessage(data,callback);
+        }, 25000);
          // return (
                 // .then(function () {
                 //     //data.message = "Response 2";
