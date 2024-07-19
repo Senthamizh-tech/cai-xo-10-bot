@@ -63,11 +63,13 @@ module.exports = {
                 body: "{\"text\":\"Response1\"}",
                 isTemplate: true
         };
-       const myTimeout = setTimeout(()=>{
+        
         data.overrideMessagePayload = overrideMessagePayload;
-         console.log("Stringified data ===> ", JSON.stringify(data));
-        return (
+        console.log("Stringified data ===> ", JSON.stringify(data));
+       return setTimeout(()=>{
                 sdk.sendUserMessage(data, callback)
+        }, 5000);
+         // return (
                 // .then(function () {
                 //     //data.message = "Response 2";
                 //     overrideMessagePayload = {
@@ -77,9 +79,7 @@ module.exports = {
                 //     data.overrideMessagePayload = overrideMessagePayload;
                 //     return setTimeout(sdk.sendUserMessage(data, callback), 25000);
                 // })
-               );
-        }, 10000);
-        clearTimeout(myTimeout);
+              // );
         // sdk.getSavedData(requestId)
         //     .then(() => {
         //         const payload = {
