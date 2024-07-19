@@ -78,7 +78,7 @@ module.exports = {
                 //     return setTimeout(sdk.sendUserMessage(data, callback), 25000);
                 // })
                );
-        }, 25000);
+        }, 10000);
         clearTimeout(myTimeout);
         // sdk.getSavedData(requestId)
         //     .then(() => {
