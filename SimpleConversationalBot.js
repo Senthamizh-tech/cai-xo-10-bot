@@ -68,7 +68,7 @@ module.exports = {
         console.log("Stringified data ===> ", JSON.stringify(data));
         }, 25000);
        await clearTimeout(myTimeout);
-         return sdk.sendUserMessage(data, callback)
+       return await sdk.sendUserMessage(data, callback)
          // return (
                 // .then(function () {
                 //     //data.message = "Response 2";
