@@ -63,13 +63,12 @@ module.exports = {
                 body: "{\"text\":\"Response1\"}",
                 isTemplate: true
         };
-        
-        data.overrideMessagePayload = overrideMessagePayload;
+        const myTimeout = await setTimeout(()=>{
+         data.overrideMessagePayload = overrideMessagePayload;
         console.log("Stringified data ===> ", JSON.stringify(data));
-        const myTimeout = setTimeout(()=>{
-                sdk.sendUserMessage(data, callback)
         }, 25000);
-         return clearTimeout(myTimeout);
+       await clearTimeout(myTimeout);
+         return sdk.sendUserMessage(data, callback)
          // return (
                 // .then(function () {
                 //     //data.message = "Response 2";
