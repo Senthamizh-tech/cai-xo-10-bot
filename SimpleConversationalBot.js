@@ -58,16 +58,16 @@ module.exports = {
         // console.log("Modified data ===> ", mod_data.context.session.BotUserSession.channels);
         // console.log("Stringified data ===> ", JSON.stringify(mod_data));
 
-        var overrideMessagePayload = {};
-        overrideMessagePayload = {
-                body: "{\"text\":\"Response1\"}",
-                isTemplate: true
-        };
-         data.overrideMessagePayload = overrideMessagePayload;
-        console.log("Stringified data ===> ", JSON.stringify(data));
-        return setTimeout(()=>{
-             sdk.sendUserMessage(data,callback);
-        }, 25000);
+        // var overrideMessagePayload = {};
+        // overrideMessagePayload = {
+        //         body: "{\"text\":\"Response1\"}",
+        //         isTemplate: true
+        // };
+        //  data.overrideMessagePayload = overrideMessagePayload;
+        // console.log("Stringified data ===> ", JSON.stringify(data));
+        // return setTimeout(()=>{
+        //      sdk.sendUserMessage(data,callback);
+        // }, 25000);
          // return (
                 // .then(function () {
                 //     //data.message = "Response 2";
@@ -91,6 +91,9 @@ module.exports = {
         //         console.log("Context ===> ", data.context);
         //         return sdk.respondToHook(payload);
         //     });
+
+        console.log("bot message",data.message)
+        return sdk.sendUserMessage(data,callback);
     },
     on_agent_transfer : function(requestId, data, callback){
         return callback(null, data);
