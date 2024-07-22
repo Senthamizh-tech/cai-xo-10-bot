@@ -69,7 +69,7 @@ module.exports = {
         console.log("bot message",data.message)
         return setTimeout(()=>{
              sdk.sendUserMessage(data,callback);
-        }, 15000);
+        }, 20000);
          // return (
                 // .then(function () {
                 //     //data.message = "Response 2";
