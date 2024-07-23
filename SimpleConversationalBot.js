@@ -66,10 +66,12 @@ module.exports = {
         // };
         //  data.overrideMessagePayload = overrideMessagePayload;
         // console.log("Stringified data ===> ", JSON.stringify(data));
-        console.log("bot message",data.message)
-        return setTimeout(()=>{
-             sdk.sendUserMessage(data,callback);
-        }, 10000);
+        
+        // console.log("bot message",data.message)
+        // return setTimeout(()=>{
+        //      sdk.sendUserMessage(data,callback);
+        // }, 10000);
+        
          // return (
                 // .then(function () {
                 //     //data.message = "Response 2";
@@ -94,8 +96,8 @@ module.exports = {
         //         return sdk.respondToHook(payload);
         //     });
 
-        // console.log("bot message",data.message)
-        // return sdk.sendUserMessage(data,callback);
+        console.log("bot message ===> ", data.message)
+        return sdk.sendUserMessage(data,callback);
     },
     on_agent_transfer : function(requestId, data, callback){
         return callback(null, data);
