@@ -15,7 +15,7 @@ module.exports = {
 
     on_user_message : function(requestId, data, callback) {
         //console.log("Data ===> ", data.context.session.BotUserSession.lastMessage)
-        console.log("user message",data.message);
+        console.log("user message", JSON.stringify(data));
         if (data.message === "Hi") {
             data.message = "Hello";
             //console.log("user message",data.message);
