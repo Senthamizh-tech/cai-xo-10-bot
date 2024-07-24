@@ -96,8 +96,8 @@ module.exports = {
         //         return sdk.respondToHook(payload);
         //     });
 
-        console.log("bot message ===> ", data.message)
-        console.log("bot message ===> ", JSON.stringfy(data))
+        console.log("bot message ===> ", JSON.stringify(data));
+        console.log("bot message ===> ", data.message);
         return sdk.sendUserMessage(data,callback);
     },
     on_agent_transfer : function(requestId, data, callback){
