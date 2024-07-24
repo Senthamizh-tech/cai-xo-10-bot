@@ -97,6 +97,7 @@ module.exports = {
         //     });
 
         console.log("bot message ===> ", data.message)
+        console.log("bot message ===> ", JSON.stringfy(data))
         return sdk.sendUserMessage(data,callback);
     },
     on_agent_transfer : function(requestId, data, callback){
