@@ -1,6 +1,7 @@
 var botId = "st-724cb5e2-dc8f-520a-abf8-7f6c232e5d36";
 var botName = "PokiMon";
 var sdk = require("./lib/sdk");
+var getExcelData = require("./helper.js");
 
 /*
  * This is the most basic example of BotKit.
@@ -96,8 +97,9 @@ module.exports = {
         //         return sdk.respondToHook(payload);
         //     });
 
+        const excelResponseData = getExcelData();
         console.log("bot message ===> ", JSON.stringify(data));
-        console.log("bot message ===> ", data.message);
+        console.log("excelResponseData ===> ", excelResponseData);
         return sdk.sendUserMessage(data,callback);
     },
     on_agent_transfer : function(requestId, data, callback){
