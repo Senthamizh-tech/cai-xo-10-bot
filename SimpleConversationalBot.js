@@ -1,7 +1,7 @@
 var botId = "st-724cb5e2-dc8f-520a-abf8-7f6c232e5d36";
 var botName = "PokiMon";
 var sdk = require("./lib/sdk");
-var getExcelData = require("./helper.js");
+const { getExcelData } = require("./helper");
 
 /*
  * This is the most basic example of BotKit.
