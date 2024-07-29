@@ -97,8 +97,9 @@ module.exports = {
         //         return sdk.respondToHook(payload);
         //     });
 
-        const excelResponseData = getExcelData();
-        console.log("bot message ===> ", JSON.stringify(data));
+        console.log("Inside on_bot_message ===> ", data.message);
+        const excelResponseData = await getExcelData();
+        // console.log("bot message ===> ", JSON.stringify(data));
         console.log("excelResponseData ===> ", excelResponseData);
         return sdk.sendUserMessage(data,callback);
     },
