@@ -115,6 +115,14 @@ module.exports = {
         return sdk.sendAlertMessage(data, callback);
     }
 
+    on_variable_update: function(requestId, data, callback) {
+        var event = data.eventType;
+		console.log("event",event)
+        if (event === "SESSION_CLOSURE_IGNORED") {
+		// we can send custom message
+            sdk.sendUserMessage(data,callback);
+        }
+    }
 };
 
 
